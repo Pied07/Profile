@@ -8,10 +8,6 @@
         {
             "src": "/(.*)",
             "dest": "my_profile/wsgi.py"
-        },
-        {
-            "src": "/static/(.*)",
-            "dest": "/static/$1"
         }
     ]
 }
