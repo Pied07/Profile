@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<style>
+    .styled-link {
+        color:black;
+        margin:10px;
+        text-decoration: None;
+        font-weight: bold;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: white;
+        transition: background-color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+    }
+    .styled-link:hover {
+        background-color: red;
+        color:white;
+    }
+    .carousel-item {
+        transition: transform 0.8s ease-in-out;
+    }
+    .image {
+        filter: brightness(0.5);
+    }
+    .Image-Body {
+        border-radius: 50%;
+        width:105px;
+        max-height: 100px;
+        object-fit:cover;
+        transition: max-height 1s ease, border-radius 1s ease, width 1s ease;
+    }
+    .Image-Body:hover {
+        border-radius: 0;
+        width: 500px;
+        max-height: 500px;
+    }
+</style>
+
+    <div class="container mt-5 text-center">
+        <div class="home" id="home">
+            <center><H1>Hello there, I am <span style="color:red;">Sandipan Adhikary</span></H1></center><hr>
+        <div class="img container" style="display:flex; justify-content: center;">
+            <img src="https://res.cloudinary.com/dbgvwyhdr/image/upload/v1727159568/profile_bjoewy.jpg" alt="" class="Image-Body">
+        </div><br>
+        <h3>A passionate <span style="color:red;">Software Developer</span> and an <span style="color:red;">IT Engineer</span></h3>
+        <h5><span style="color:red;">From:</span> West Bengal, Durgapur</h5><hr>
+        <p>My <span style="color:red;">Profile</span> Links:</p>
+        <a href="https://leetcode.com/u/Sandipan_Adhikary/" class="styled-link" target="_blank"><i class="fa-solid fa-code"> </i> LeetCode</a>
+        <a href="https://www.hackerrank.com/profile/sandipanadhikar2" class="styled-link" target="_blank"><i class="fa-brands fa-hackerrank"> </i> HackerRank</a>
+        <a href="http://www.linkedin.com/in/sandipan-adhikary-ab418b230" class="styled-link" target="_blank"><i class="fa-brands fa-linkedin"> </i> LinkedIn</a>
+        <a href="https://github.com/Pied07" class="styled-link" target="_blank"><i class="fa-brands fa-github"> </i> GitHub</a>
+        <br><br><br>
+        <p>My <span style="color:red;">Personal</span> Informations:</p>
+        <a href="mailto:sandipanadhikary01@gmail.com" class="styled-link" target="_blank"><i class="fa-solid fa-envelope"> </i> Email</a>
+        <a href="tel:+919733413928" class="styled-link" target="_blank"><i class="fa-solid fa-phone"> </i> Phone</a>
+        <a href="{% url "download" %}" class="styled-link"><i class="fa fa-file"> </i> Resume</a>
+        </div>
+
+    <div class="projects mt-5" id="projects">
+            <H1>My <span style="color:red;">Projects</span></H1><hr>
+
+            <h3>News Reader</h3><br>
+            <div id="carouselExampleCaptions1" class="carousel slide"  data-bs-ride="carousel" data-bs-interval:"1000">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://res.cloudinary.com/dbgvwyhdr/image/upload/v1727174698/Screenshot_2024-09-24_161149_ic7ugn.png" class="image d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Home Page</h5>
+                      <p>This is the Home page where one can either login or register or maybe just explore the page!</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/dbgvwyhdr/image/upload/v1727174698/Screenshot_2024-09-24_161207_fnfhgz.png" class="image d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Registration Page</h5>
+                      <p>The Registration Page where people can register. Also the user needs to verify the captcha while registering or even login.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/dbgvwyhdr/image/upload/v1727174698/Screenshot_2024-09-24_161248_j5ckzq.png" class="image d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>The Premium In View</h5>
+                      <p>When the user becomes Premium ther profile pic changes to yellow and red in the top right corner and they also get a scope of canceling there Subscription, for every step the user gets a mail from News Reader for confirmation, like they will get mail after registering, for mail confirmation and thankings giving also they wil get congradulation mail after becoming premium and will get an alert mail after their subscription gets in valid after a certain period of days accordin to their plan!</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/dbgvwyhdr/image/upload/v1727174869/Screenshot_2024-09-24_161716_clzoef.png" class="image d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>News Page</h5>
+                      <p>the user will get all the details about the news like the Title, Author, Published Date, Description and a button to navigate to the source website.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <br>
+              <h3>Project <span style="color:red;">Overview</span></h3> <hr>
+              <p>This Project is done only to Showcase the API integration, Celery implementation, Payment Gateway integration. <br> For API there are Three main APIs that has been used in this Project, These are: <br> <b>Media Stack</b> for fetching News Details, <br> <b>Google ReCaptcha</b> for Captcdha Verification, <br> <b>RazorPay</b> For Payment Gateway. <br> For Celery Implementation <b>Render's Redis</b> instance has been used <br> All the Activities has been completed only using the free tier versions that's the main reason why I have used <b>Media Stack</b> over <b>News API</b> since news API does'nt provide news on countries other than US and I Personally wanted to make a News Filter Option, For that More than One country's News and Languages were Proving to be Mandatory Requirements <br> Also For the Subscription there are basically two plans, one is monthly and another is yearly, <b>a Scheduler is used to constantly check for subscription validity every mid night</b> so as to expire the subscription when the right time comes. <br> Additionally after Deploying I found out that Render makes the website inactive if it does'nt fount any activity for 15minutes and sends the website to sleep mode, which is kind of annoying since it takes a lot of time to open from sleep mode so i created a <b>bash</b> file naming <b>setup.sh</b> to run all the <b>celery and web commands</b>, and also created another task which will ping the website after every 5minutes, thus the website can't get into sleep mode, <b>making my website run faster!</b> <br>Below is the Link for both the <b>Website</b> and the <b>Repository</b>:</p>
+              <a href="https://news-reader-7uab.onrender.com/" class="styled-link" target="_blank"><i class="fa-solid fa-globe"> </i> Visit The Website</a>
+              <a href="https://github.com/Pied07/News-Reader" class="styled-link" target="_blank"><i class="fa-brands fa-github"> </i> Visit the Repository</a>
+              <br><br><hr><br><br>
+              <h3>Quotes App</h3><br>
+            <div id="carouselExampleCaptions2" class="carousel slide"  data-bs-ride="carousel" data-bs-interval:"1000">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://res.cloudinary.com/dbgvwyhdr/image/upload/v1727170861/Screenshot_2024-09-24_150904_k5la7j.png" class="image d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Recent Quotes Page</h5>
+                      <p>Showing all the Quotes posted in the Site to the user even if the user is logged out!</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/dbgvwyhdr/image/upload/v1727170917/Screenshot_2024-09-24_151136_hisajk.png" class="image d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Registration Page</h5>
+                      <p>The Default Registration Page that Django Offers, for a user to Register and create Quotes</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/dbgvwyhdr/image/upload/v1727170974/Screenshot_2024-09-24_151237_g08v2r.png" class="image d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>The Logged In View</h5>
+                      <p>When the User Logs in He/She can see Comments on each Quotes and can also Like or add comments, the Respective users can either delete the comments or edit their Quotes or unlike the liked Quote!</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://res.cloudinary.com/dbgvwyhdr/image/upload/v1727171023/Screenshot_2024-09-24_151323_ykcbs7.png" class="image d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Edit View</h5>
+                      <p>This is the Edit View of a Quote, All the instances are saved except the image, user have to upload the image everytime even if they does'nt want to change the image!</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <br>
+              <h3>Project <span style="color:red;">Overview</span></h3> <hr>
+              <p>This Project mainly focuses on the Data base concept of Django. All the <b>CRUD</b> functions have been successfully implemented. Basically 4 Tables have been Used in this project. <br> First is the by default <b>User</b> model in Django. <br> Second is the <b>Quote</b> Model that has been created keeping an attribute user as the Foreign key for User Model. This model basically stores all the necessary attributes that is required to create/edit a Quote for Example: Font name, Quote Body, Copyright name, Caption etc etc <br> Third a table for storing the <b>Likes</b> and the user as foreign Key of User Model to know which user Liked and another attribute quote, a Foreign Key for Quote Model to know which Quote the user Liked  <br> Similarly a <b>Comment</b> Model is Created just Like the Like, this is for storing the comments. <br>Below is the Link for both the <b>Website</b> and the <b>Repository</b>:</p>
+              <a href="https://quotes-app-psi-sage.vercel.app/" class="styled-link" target="_blank"> <i class="fa-solid fa-globe"></i> Visit The Website</a>
+              <a href="https://github.com/Pied07/QuotesApp" class="styled-link" target="_blank"><i class="fa-brands fa-github"> </i> Visit the Repository</a>
+            </div>
+            <br><br>
+    <div class="skills" id="skills">
+                <H1>My <span style="color:red;">Skills</span></H1><hr>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 major mb-3">
+                        <h5 style="color:red;">Major Skills:</h5>
+                    <ul style="list-style-type: None; padding: 0; margin: 0;">
+                        <li>Python</li>
+                        <li>Django</li>
+                        <li>Data Structure and Algorithm</li>
+                    </ul>
+                    </div>
+                    <div class="col-md-4 minor mb-3">
+                        <h5 style="color:red;">Minor Skills:</h5>
+                    <ul style="list-style-type: None; padding: 0; margin: 0;">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Java Script</li>
+                    </ul>
+                    </div>
+                    <div class="col-md-4 soft mb-3">
+                        <h5 style="color:red;">Soft Skills:</h5>
+                    <ul style="list-style-type: None; padding: 0; margin: 0;">
+                        <li>Out of the Box Thinking</li>
+                        <li>Will to Learn Something New</li>
+                        <li>Fast Learner</li>
+                    </ul>
+                    </div>
+                </div>
+            </div> <br><br>
+    <div class="education" id="education">
+                <H1>My <span style="color:red;">Education</span></H1><hr>
+                <div class="card mb-4">
+                    <div class="card-header">
+                      <H1>College</H1>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title" style="color:red;">University Institute of Technology</h5>
+                      <ul style="list-style-type: None; padding: 0; margin: 0;">
+                        <li>Affiliated Under: <b>Burdwan University</b></li>
+                        <li>Stream: <b>Information Technology</b> Degree: <b>B.E.</b> CGPA: <b>7.93</b></li>
+                        <li>Year: <b>2020-2024</b></li>
+                        <li>Address: <b>West Bengal, Bardhaman</b></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card mb-4">
+                    <div class="card-header">
+                      <H1>High School</H1>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title" style="color:red;">Hem Sheela Model School</h5>
+                      <ul style="list-style-type: None; padding: 0; margin: 0;">
+                        <li>Affiliated Under: <b>Central Board of Secondary Education(CBSE)</b></li>
+                        <li>Stream: <b>Science</b> Subjects: <b>Phisics, Chemistry, Mathemetics, Computer, Physical Education, English</b> Best of Five: <b>76%</b></li>
+                        <li>Year: <b>2018-2020</b></li>
+                        <li>Address: <b>West Bengal, Durgapur</b></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card mb-4">
+                    <div class="card-header">
+                      <H1>School</H1>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title" style="color:red;">St Michael's School</h5>
+                      <ul style="list-style-type: None; padding: 0; margin: 0;">
+                        <li>Affiliated Under: <b>Indian Certificate of Secondary Education</b></li>
+                        <li>Stream: <b>Science</b> Total: <b>78.66%</b> Best of five: <b>81.2%</b></li>
+                        <li>Year: <b>2006-2018</b></li>
+                        <li>Address: <b>West Bengal, Durgapur</b></li>
+                      </ul>
+                    </div>
+                  </div>
+        </div><br><br>
+    <div class="about" id="about">
+                <H1><span style="color:red;">About</span> Me</H1><hr>
+                <p style="padding:0 20px;">I am Sandipan Adhikary, a Passionate Engineer and Python Lover. I have successfully completed my B.E. degree without any back log in July 2024 and I am currently Looking for a job Oppertunity as a Software Developer. <br> Since Childhood I was in touch with programming language, and coding has always been a love of my life ever since I Learnt the Hello World Code in the first Language that I happened to know which was <b>JAVA</b> <br> in my 10th standard the programming language that I had was JAVA, that's How it became the first Programming Language that I get to Know <br><br> After 10th the next Language that came to my Life was <b>C++</b>, in 11th and 12fth. <br> Learning C++ did'nt became much of a challenge since I was already familiar with JAVA, Till then I never used Python, I just only heard about it a bit. <br><br>Later when I came in my college I got a udemy programming cource for free somehow, and that cource is about <b>Python Programming and its Fundamentals.</b><br>This was the First Time I get to know about Python and then I decided that this Language is for me I will continue my career in this language only, ever since then Python Became a part of my life. <br>In that cource I get to know about the basic fundamentals of Python like loops,if-else statements,dictionaries, lists,tupples etc, and then it moved to graphics using tkinter gradually it started to become more and more Interesting. <br> Then it moved to databases concepts which involved sqlite and postgresql, after that it mainly focused on data analytics using numpy, pandas, matplotlib and many other tools. <br> So this is how I started my journey towards Python. <br><br>After that I started to learn about some of the Machine Learning Fundamentals and then I finally started Django and then kept my pace in Django only as I really started to enjoy working with Django and its Functionalities. <br><br>Thank You For Visiting My Website and patiently Reading this much.</p>
+    </div>
+    <br><br>
+    <div class="contacts" id="contacts">
+        <H1>My <span style="color:red;">Contacts</span></H1><hr>
+        <p>My <span style="color:red;">Contact Details</span> are mentioned below:</p>
+        <a href="mailto:sandipanadhikary01@gmail.com" class="styled-link" target="_blank"><i class="fa-solid fa-envelope"> </i> sandipanadhikary01@gmail.com</a>
+        <a href="tel:+919733413928" class="styled-link" target="_blank"><i class="fa-solid fa-phone"> </i> +91-97334-13928</a>
+    </div>
+    </div>
+    <br><br>
+
+{% endblock %}
