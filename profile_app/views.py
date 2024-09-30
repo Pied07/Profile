@@ -8,7 +8,7 @@ def home(request):
 
 def download_resume(request):
     try:
-        url = f"https://res.cloudinary.com/dbgvwyhdr/raw/upload/v1727232856/uhyh17rllmgo6z64wiff.pdf"
+        url = f"https://res.cloudinary.com/dbgvwyhdr/raw/upload/v1727691791/zy6006x2jlcodzc0kffs.pdf"
         response = HttpResponse(content_type='application/pdf')
         response['Content-Disposition'] = f'attachment; filename="Sandipan_Adhikary_Resume.pdf"'
         response.write(requests.get(url).content)
